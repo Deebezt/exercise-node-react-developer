@@ -1,7 +1,7 @@
 import { debug as createDebug } from 'debug';
 import { createServer } from 'http';
-import { config } from './config';
 import { app } from './app';
+import { config } from './config';
 
 const debug = createDebug('api');
 
@@ -61,11 +61,9 @@ server.on('error', (error: NodeJS.ErrnoException) => {
     case 'EACCES':
       debug(`${bind} requires elevated privileges`);
       process.exit(1);
-      break;
     case 'EADDRINUSE':
       debug(`${bind} is already in use`);
       process.exit(1);
-      break;
     default:
       throw error;
   }

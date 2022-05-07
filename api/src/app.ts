@@ -1,8 +1,8 @@
-import express, { Response, Request, NextFunction } from 'express';
 import cors from 'cors';
-import { repos } from './routes/repos';
+import express, { NextFunction, Request, Response } from 'express';
 import { terrible } from './middleware/terrible';
 import { AppError } from './models/AppError';
+import { repos } from './routes/repos';
 
 // CORS header configuration
 const corsOptions = {
